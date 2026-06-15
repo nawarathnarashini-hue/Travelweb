@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - GlobeTrek Adventures</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+
+    <nav class="navbar" style="position:relative;">
+        <div class="nav-container">
+            <a href="home.html" class="logo"><i class="fas fa-globe-americas"></i> GlobeTrek Adventures</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mobile-toggle" onclick="toggleMobile()"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <div class="auth-page" style="background: linear-gradient(135deg, rgba(0,102,204,0.9), rgba(0,168,232,0.9)), url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1920') center/cover;">
+        <div class="auth-card">
+            <h2>Welcome Back</h2>
+            <form action="login.inc.php" method="POST" onsubmit="return handleLogin(event)">
+                <div class="form-row">
+                    <label>Email</label>
+                    <input type="email" class="form-control" name="email" id="loginEmail" required>
+                </div>
+                <div class="form-row">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="password" id="loginPassword" required>
+                </div>
+                <div class="checkbox-row">
+                    <input type="checkbox" name="staff" id="roleSelect" value="1">
+                    <label for="roleSelect" style="margin:0; font-weight:normal; cursor:pointer;">Login as Staff/Admin</label>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%;">Login</button>
+            </form>
+            <div class="auth-footer">
+                Don't have an account? <a href="registration.html">Register</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script src="main.js"></script>
+</body>
+</html>
